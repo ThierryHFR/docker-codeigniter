@@ -1,0 +1,15 @@
+services:
+ web:
+   build: dockerfiles/php-apache
+   ports:
+    - "80:80"
+
+ database:
+  build: dockerfiles/mysql
+  ports:
+   - "3306:3306"
+  volumes:
+   - mydatabase:/var/lib/mysql
+
+volumes:
+  mydatabase:
